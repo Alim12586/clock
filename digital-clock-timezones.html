@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Clock with Time Zones</title>
+  <style>
+    body { font-family: sans-serif; background: #f7f9fa; text-align: center; }
+    h2 { margin-top: 30px; }
+    .clock-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .clock {
+      background: #222;
+      color: #0fd;
+      border-radius: 12px;
+      padding: 20px 30px;
+      font-size: 2rem;
+      box-shadow: 0 3px 10px #aaa;
+      min-width: 220px;
+    }
+    .zone {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Digital Clock - Multiple Time Zones</h2>
+  <div class="clock-container" id="clocks"></div>
+
+  <script>
+    // List of time zones to display
+    const timeZones = [
+      { name: "UTC", zone: "UTC" },
+      { name: "New York (EST)", zone: "America/New_York" },
+      { name: "London (GMT)", zone: "Europe/London" },
+      { name: "Istanbul (TRT)", zone: "Europe/Istanbul" },
+      { name: "Tokyo (JST)", zone: "Asia/Tokyo" },
+      { name: "Sydney (AEST)", zone: "Australia/Sydney" },
+    ];
+
+    const clocksDiv = document.getElementById('clocks');
+
+    function createClockElements() {
+      clocksDiv.innerHTML = '';
+      timeZones.forEach(tz => {
+        const clockDiv = document.createElement('div');
+        clockDiv.className = 'clock';
+        clockDiv.innerHTML = `
+          <div class="zone">${tz.name}</div>
+          <div class="time" id="clock-${tz.zone.replace(/\//g, '-')}" style="font-weight:bold;">--:--:--</div>
+        `;
+        clocksDiv.appendChild(clockDiv);
+      });
+    }
+
+    function updateClocks() {
+      timeZones.forEach(tz => {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZone: tz.zone
+        });
+        const timeDiv = document.getElementById(`clock-${tz.zone.replace(/\//g, '-')}`);
+        if (timeDiv) timeDiv.textContent = timeStr;
+      });
+    }
+
+    createClockElements();
+    updateClocks();
+    setInterval(updateClocks, 1000);
+  </script>
+</body>
+</html>
