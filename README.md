@@ -1,3 +1,6 @@
 # clock
 
 ![Screenshot_2](https://dswa1xdat8uez.cloudfront.net/2jchy%2Fpreview%2F70473043%2Fmain_large.png?response-content-disposition=inline%3Bfilename%3D"main_large.png"%3B&response-content-type=image%2Fpng&Expires=1756800100&Signature=FTdQkv1aCMLQkxzFKH1tohVkx~5uH1G6kpjQuTjmqRXStZM5IAk8f8RXtpOCHy2AJFnAE8ybT1~vlbe6T0UQgO2C5iZ6fvIZiTWaHiHZ6QhDASqfbcAu4OS8KYMJ22CY8j39BbRzwWR-4vJhbUSP0~5qOV9j8ZwLX1YmOEs3rvyITOLzcwfv134aLnvfJj9mXoWLu0F836cYDr2gFHxigHMWGehUqy-XqUWYGXQMTQibbD9iz1rAt2m5jxquaWJq5UK2OO81lf9lwmKH3B~ykjSQ9p1o1mznuNOARNtG0ovj2FTROgGfSOCCi3xn6ulQd0JVanxG75EcMra8u5kKLA__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ)
+
+You can see the time of all countries and it is made from html.
+We can look at the time as you wish.
